@@ -20,6 +20,7 @@ namespace _01_Report_Repair
             //        if (numA + numB == 2020)
             //        {
             //            Console.WriteLine($"Found numbers {numA} and {numB}: {numA * numB}");
+            //            return;
             //        }
             //    }
             //}
@@ -31,12 +32,13 @@ namespace _01_Report_Repair
                 {
                     var numB = input[j];
 
-                    for (var k = j + 1; k < input.Length; k ++)
+                    for (var k = j + 1; k < input.Length; k++)
                     {
                         var numC = input[k];
                         if (numA + numB + numC == 2020)
                         {
                             Console.WriteLine($"Found numbers {numA}, {numB} and {numC}: {numA * numB * numC}");
+							return;
                         }
                     }
                 }
