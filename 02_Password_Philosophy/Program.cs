@@ -15,7 +15,8 @@ namespace _02_Password_Philosophy
 
             var day = services.GetRequiredService<Day2>();
             day.Input = File.ReadAllText("input.txt");
-            day.Run();
+            //day.Run1();
+            day.Run2();
 
             logger.LogInformation("\r\nResult: {result}", day.ValidPasswords);
         }

@@ -20,14 +20,14 @@ namespace _02_Password_Philosophy
             this.logger = logger;
         }
 
-        public void Run()
+        private void Run(Predicate<InputLine> validCall)
         {
             var inputLines = Input.Split('\n').Select(s => InputLine.FromInputLine(s.Trim())).ToList();
 
             int count = 0;
             foreach (var line in inputLines)
             {
-                if (line.IsValid())
+                if (validCall(line))
                 {
                     logger.LogInformation("{line} is valid", line.Raw);
                     count++;
@@ -39,6 +39,15 @@ namespace _02_Password_Philosophy
             }
 
             ValidPasswords = count;
+        }
+
+        public void Run1()
+        {
+            Run(line => line.IsValidRule1());
+        }
+        public void Run2()
+        {
+            Run(line => line.IsValidRule2());
         }
     }
 }

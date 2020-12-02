@@ -47,10 +47,15 @@ namespace _02_Password_Philosophy
         }
 
 
-        public bool IsValid()
+        public bool IsValidRule1()
         {
             var charCount = Password.Count(c => c == Character);
             return charCount >= Min && charCount <= Max;
+        }
+
+        public bool IsValidRule2()
+        {
+            return Password[Min - 1] == Character ^ Password[Max - 1] == Character;
         }
     }
 }

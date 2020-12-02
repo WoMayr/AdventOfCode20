@@ -22,24 +22,55 @@ namespace _02_Password_Philosophy
         }
 
         [Fact]
-        public void Example()
+        public void Part1_Example()
         {
             subject.Input = @"1-3 a: abcde
 1-3 b: cdefg
 2-9 c: ccccccccc";
 
-            subject.Run();
+            subject.Run1();
 
             subject.ValidPasswords.Should().Be(2);
         }
 
 
         [Fact]
-        public void Custom1()
+        public void Part1_Custom1()
         {
             subject.Input = "1-3 a: aaaa";
 
-            subject.Run();
+            subject.Run1();
+
+            subject.ValidPasswords.Should().Be(0);
+        }
+
+
+        [Fact]
+        public void Part2_Example_abcde()
+        {
+            subject.Input = "1-3 a: abcde";
+
+            subject.Run2();
+
+            subject.ValidPasswords.Should().Be(1);
+        }
+
+        [Fact]
+        public void Part2_Example_cdefg()
+        {
+            subject.Input = "1-3 b: cdefg";
+
+            subject.Run2();
+
+            subject.ValidPasswords.Should().Be(0);
+        }
+
+        [Fact]
+        public void Part2_Example_ccccccccc()
+        {
+            subject.Input = "2-9 c: ccccccccc";
+
+            subject.Run2();
 
             subject.ValidPasswords.Should().Be(0);
         }
