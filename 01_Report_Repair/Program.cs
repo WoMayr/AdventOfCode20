@@ -38,7 +38,7 @@ namespace _01_Report_Repair
                         if (numA + numB + numC == 2020)
                         {
                             Console.WriteLine($"Found numbers {numA}, {numB} and {numC}: {numA * numB * numC}");
-							return;
+                            return;
                         }
                     }
                 }

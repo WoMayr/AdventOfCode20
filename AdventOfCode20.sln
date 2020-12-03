@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Report_Repair", "01_Report_Repair\01_Report_Repair.csproj", "{A23E6005-64CE-4537-A195-B3FFA8A31218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Password_Philosophy", "02_Password_Philosophy\02_Password_Philosophy.csproj", "{C4AA503A-5572-48AC-8724-C1783855C109}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Password_Philosophy", "02_Password_Philosophy\02_Password_Philosophy.csproj", "{C4AA503A-5572-48AC-8724-C1783855C109}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{ACCF849F-24EC-4947-8102-1C01A90654B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{ACCF849F-24EC-4947-8102-1C01A90654B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Toboggan_Trajectory", "03_Toboggan_Trajectory\03_Toboggan_Trajectory.csproj", "{8AC60172-6E93-453F-9E14-D21BCFF8F722}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{ACCF849F-24EC-4947-8102-1C01A90654B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACCF849F-24EC-4947-8102-1C01A90654B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACCF849F-24EC-4947-8102-1C01A90654B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC60172-6E93-453F-9E14-D21BCFF8F722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC60172-6E93-453F-9E14-D21BCFF8F722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC60172-6E93-453F-9E14-D21BCFF8F722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC60172-6E93-453F-9E14-D21BCFF8F722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
