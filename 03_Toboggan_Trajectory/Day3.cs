@@ -27,7 +27,7 @@ namespace _03_Toboggan_Trajectory
             var x = 0;
             var y = 0;
 
-            var count = 0l;
+            var count = 0L;
             while (y < Forest.Height)
             {
                 if (Forest.IsTree(x, y))

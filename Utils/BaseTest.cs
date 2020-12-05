@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using Xunit.Abstractions;
 
 namespace Utils
@@ -6,10 +7,11 @@ namespace Utils
     public abstract class BaseTest<T> where T : class
     {
         protected T subject;
+        protected IServiceProvider services;
 
         public BaseTest(ITestOutputHelper output)
         {
-            var services = Setup.SetupDependencyInjection<T>(output, ConfigureServices);
+            services = Setup.SetupDependencyInjection<T>(output, ConfigureServices);
             subject = services.GetRequiredService<T>();
         }
 
