@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_Toboggan_Trajectory", "03_Toboggan_Trajectory\03_Toboggan_Trajectory.csproj", "{8AC60172-6E93-453F-9E14-D21BCFF8F722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Passport_Processing", "04_Passport_Processing\04_Passport_Processing.csproj", "{FC758B87-592D-47CD-8CB0-B667887DD9AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_Passport_Processing", "04_Passport_Processing\04_Passport_Processing.csproj", "{FC758B87-592D-47CD-8CB0-B667887DD9AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Binary_Boarding", "05_Binary_Boarding\05_Binary_Boarding.csproj", "{2B7666A1-51E1-433D-9729-0D44C2ED9FDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_Binary_Boarding", "05_Binary_Boarding\05_Binary_Boarding.csproj", "{2B7666A1-51E1-433D-9729-0D44C2ED9FDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Custom_Customs", "06_Custom_Customs\06_Custom_Customs.csproj", "{E7412F8C-DBA8-4437-AD95-620B39CFD3B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{2B7666A1-51E1-433D-9729-0D44C2ED9FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B7666A1-51E1-433D-9729-0D44C2ED9FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B7666A1-51E1-433D-9729-0D44C2ED9FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7412F8C-DBA8-4437-AD95-620B39CFD3B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7412F8C-DBA8-4437-AD95-620B39CFD3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7412F8C-DBA8-4437-AD95-620B39CFD3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7412F8C-DBA8-4437-AD95-620B39CFD3B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
