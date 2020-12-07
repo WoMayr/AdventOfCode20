@@ -15,6 +15,12 @@ namespace _07_Handy_Haversacks
         {
             day.Target = "shiny gold";
             day.TargetQuantity = 1;
+
+            day.Run1();
+            logger.LogInformation("\r\nPossible colors: {colors}", day.Possibilities);
+
+            day.Run2();
+            logger.LogInformation("\r\nNeeded bags: {neededBags}", day.NeededBags);
         }
     }
 }
