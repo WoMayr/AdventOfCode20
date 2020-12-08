@@ -3,7 +3,7 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>_07_Handy_Haversacks</RootNamespace>
+        <RootNamespace>_08_Handheld_Halting</RootNamespace>
         <GenerateProgramFile>false</GenerateProgramFile>
     </PropertyGroup>
 
@@ -28,5 +28,6 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>
+
 
 </Project>
