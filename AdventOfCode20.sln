@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_Custom_Customs", "06_Cus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_Handy_Haversacks", "07_Handy_Haversacks\07_Handy_Haversacks.csproj", "{F97DA77C-EE0F-4D5C-976C-583FFC412928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Handheld_Halting", "08_Handheld_Halting\08_Handheld_Halting.csproj", "{68F8B7F9-DBC2-4733-8D0F-D672B6C7E63C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_Handheld_Halting", "08_Handheld_Halting\08_Handheld_Halting.csproj", "{68F8B7F9-DBC2-4733-8D0F-D672B6C7E63C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Encoding_Error", "09_Encoding_Error\09_Encoding_Error.csproj", "{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{68F8B7F9-DBC2-4733-8D0F-D672B6C7E63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68F8B7F9-DBC2-4733-8D0F-D672B6C7E63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68F8B7F9-DBC2-4733-8D0F-D672B6C7E63C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
