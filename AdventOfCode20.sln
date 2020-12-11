@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_Handy_Haversacks", "07_H
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_Handheld_Halting", "08_Handheld_Halting\08_Handheld_Halting.csproj", "{68F8B7F9-DBC2-4733-8D0F-D672B6C7E63C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Encoding_Error", "09_Encoding_Error\09_Encoding_Error.csproj", "{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Encoding_Error", "09_Encoding_Error\09_Encoding_Error.csproj", "{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_Adapter_Array", "10_Adapter_Array\10_Adapter_Array.csproj", "{792409B4-DD41-4C3C-92BF-814EA096579F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C66D4C3-CB5A-4FF3-8E2E-E90097F7ACD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792409B4-DD41-4C3C-92BF-814EA096579F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792409B4-DD41-4C3C-92BF-814EA096579F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792409B4-DD41-4C3C-92BF-814EA096579F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792409B4-DD41-4C3C-92BF-814EA096579F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
