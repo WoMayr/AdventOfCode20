@@ -17,7 +17,7 @@ namespace _10_Adapter_Array
             logger.LogInformation("\n1-Jolt * 3-Jolt: {Result}", day.JoltDifferenceCount[1] * day.JoltDifferenceCount[3]);
 
             day.Run2();
-            logger.LogInformation("\nWay to arrange adapters: {CountPossibilities}", day.PossibleAdapterConfigurations.Count);
+            logger.LogInformation("\nWay to arrange adapters: {CountPossibilities}", day.PossibilityCount);
         }
     }
 }

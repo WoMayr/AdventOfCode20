@@ -19,7 +19,7 @@ namespace _10_Adapter_Array
         public Dictionary<int, int[]> PossibleAdapters { get; set; }
         public bool TrackPossibilities { get; internal set; }
 
-        private Dictionary<int, List<int[]>> subLists;
+        private Dictionary<int, (List<int[]>, long)> subLists;
 
         public Day10(ILogger<Day10> logger)
         {
@@ -68,7 +68,7 @@ namespace _10_Adapter_Array
                 if (adapter > currentJoltage + 3)
                 {
                     break;
-                } 
+                }
                 else if (adapter > currentJoltage && adapter <= currentJoltage + 3)
                 {
                     result.Add(adapter);
@@ -80,14 +80,14 @@ namespace _10_Adapter_Array
             return resultArr;
         }
 
-        private List<int[]> GetAdapterConfigurations(int currentJoltage, int[] adapters)
+        private (List<int[]>, long) GetAdapterConfigurations(int currentJoltage, int[] adapters)
         {
-            if (subLists.TryGetValue(currentJoltage, out var result))
+            if (subLists.TryGetValue(currentJoltage, out var cacheResult))
             {
-                logger.LogInformation("Could reuse result from {Joltage}", currentJoltage);
-                return result;
+                //logger.LogInformation("Could reuse result from {Joltage}", currentJoltage);
+                return cacheResult;
             }
-            logger.LogInformation("Cache miss for joltage {Joltage}", currentJoltage);
+            //logger.LogInformation("Cache miss for joltage {Joltage}", currentJoltage);
             var backupJoltage = currentJoltage;
 
             var currentList = new List<int>();
@@ -104,28 +104,32 @@ namespace _10_Adapter_Array
                 }
                 else if (possibleAdapters.Length > 1)
                 {
-                    result = new List<int[]>();
-                    subLists[currentJoltage] = result;
+                    List<int[]> result = null;
+                    if (TrackPossibilities)
+                    {
+                        result = new();
+                    }
+                    long resultCount = 0;
+
                     foreach (var adapter in possibleAdapters)
                     {
                         // Calculate sublists
-                        var adapterPossibleConfigurations = GetAdapterConfigurations(adapter, adapters);
+                        var (adapterPossibleConfigurations, counts) = GetAdapterConfigurations(adapter, adapters);
+                        resultCount += counts;
 
                         // Append sublists to result list
-                        foreach (var possibleConfig in adapterPossibleConfigurations)
+                        if (TrackPossibilities)
                         {
-                            if (TrackPossibilities)
+                            foreach (var possibleConfig in adapterPossibleConfigurations)
                             {
                                 result.Add(currentList.Concat(new[] { adapter }).Concat(possibleConfig).ToArray());
                             }
-
-                            if (backupJoltage == 0)
-                            {
-                                PossibilityCount++;
-                            }
                         }
                     }
-                    return result;
+
+                    var toReturn = (result, resultCount);
+                    subLists[currentJoltage] = toReturn;
+                    return toReturn;
                 }
                 else
                 {
@@ -134,8 +138,16 @@ namespace _10_Adapter_Array
             }
 
             // Boring single choice route
-            logger.LogInformation("Finished adapter selection to end from branch {JoltBranch}: {AdapterList}", backupJoltage, currentList);
-            return new List<int[]> { currentList.ToArray() };
+            //logger.LogInformation("Finished adapter selection to end from branch {JoltBranch}: {AdapterList}", backupJoltage, currentList);
+
+            List<int[]> resultList = null;
+            if (TrackPossibilities)
+            {
+                resultList = new List<int[]> {
+                    currentList.ToArray()
+                };
+            }
+            return (resultList, 1);
         }
 
         public void Run2()
@@ -145,9 +157,8 @@ namespace _10_Adapter_Array
             // Reset memoized properties
             subLists = new();
             PossibleAdapters = new();
-            PossibilityCount = 0;
 
-            PossibleAdapterConfigurations = GetAdapterConfigurations(0, adapters);
+            (PossibleAdapterConfigurations, PossibilityCount) = GetAdapterConfigurations(0, adapters);
         }
     }
 }
