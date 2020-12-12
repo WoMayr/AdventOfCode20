@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Encoding_Error", "09_Enc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Adapter_Array", "10_Adapter_Array\10_Adapter_Array.csproj", "{792409B4-DD41-4C3C-92BF-814EA096579F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_Seating_System", "11_Seating_System\11_Seating_System.csproj", "{9D0A92C9-9EAA-4B93-8AFE-0A3BEF705627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_Seating_System", "11_Seating_System\11_Seating_System.csproj", "{9D0A92C9-9EAA-4B93-8AFE-0A3BEF705627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Rain_Risk", "12_Rain_Risk\12_Rain_Risk.csproj", "{EDDDF894-5268-48CE-9654-EA6D24F7C9A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{9D0A92C9-9EAA-4B93-8AFE-0A3BEF705627}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D0A92C9-9EAA-4B93-8AFE-0A3BEF705627}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D0A92C9-9EAA-4B93-8AFE-0A3BEF705627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDDDF894-5268-48CE-9654-EA6D24F7C9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDDDF894-5268-48CE-9654-EA6D24F7C9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDDDF894-5268-48CE-9654-EA6D24F7C9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDDDF894-5268-48CE-9654-EA6D24F7C9A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
