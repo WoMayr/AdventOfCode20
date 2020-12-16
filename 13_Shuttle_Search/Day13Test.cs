@@ -88,7 +88,7 @@ namespace _13_Shuttle_Search
             subject.EarliestCascadeTimestamp.Should().Be(1261476);
         }
 
-        [Fact(Timeout = 30*1000)]
+        [Fact(Timeout = 30 * 1000)]
         public void Part2_Example6()
         {
             subject.Input = @"0

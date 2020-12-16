@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,19 @@ namespace _13_Shuttle_Search
 {
     public class Day13 : BaseDay
     {
+        private readonly ILogger<Day13> logger;
+
         public int BusId { get; set; }
         public int WaitTime { get; set; }
         public int Part1Check => BusId * WaitTime;
 
         public long EarliestCascadeTimestamp { get; set; }
         public long? MaxTimestampCheck { get; set; }
+
+        public Day13(ILogger<Day13> logger)
+        {
+            this.logger = logger;
+        }
 
         private (int, List<int>) ParseInput1()
         {
@@ -58,16 +66,11 @@ namespace _13_Shuttle_Search
             WaitTime = minWaitTime;
         }
 
-        private bool CheckPattern(long timestamp, List<(int, int)> offsetList)
-        {
-
-
-            return true;
-        }
-
         public void Run2()
         {
-            Run2_BruteForce();
+            //Run2_BruteForce();
+            Run2_CRTSieve();
+            //Run2_CRT();
         }
 
         private static long ModularMultiplicativeInverse(long number, long modulus)
@@ -84,6 +87,75 @@ namespace _13_Shuttle_Search
 
             return 1;
         }
+
+        private void Run2_CRTSieve()
+        {
+            var (_, busIds) = ParseInput2();
+
+            var offsetList = busIds
+                .Select((busId, offset) => (busId, modulus: busId - offset, offset))
+                .Where(x => x.busId > 0)
+                .Select(x =>
+                {
+                    var (busId, modulus, offset) = x;
+                    while (modulus < 0)
+                    {
+                        modulus += busId;
+                    }
+                    return (busId, modulus, offset);
+                })
+                //.OrderBy(x => x.busId)
+                .ToList();
+
+            var firstItem = offsetList.First();
+            long stepSize = firstItem.busId;
+            long currentTimestamp = -firstItem.offset + stepSize;
+
+            int idx = 1;
+            foreach (var (busId, modulus, offset) in offsetList.Skip(1))
+            {
+                while (true)
+                {
+                    if (currentTimestamp % busId == modulus)
+                    {
+                        logger.LogInformation("Found for idx {Idx}", idx);
+                        idx++;
+                        break;
+                    }
+
+                    currentTimestamp += stepSize;
+
+                    if (MaxTimestampCheck != null && currentTimestamp > MaxTimestampCheck)
+                    {
+                        return;
+                    }
+                }
+
+                stepSize *= busId;
+            }
+
+            EarliestCascadeTimestamp = currentTimestamp;
+        }
+
+        //private void Run2_CRT()
+        //{
+        //    var (_, busIds) = ParseInput2();
+        //    var offsetList = busIds
+        //        .Select((busId, offset) => (busId, offset))
+        //        .Where(x => x.busId > 0)
+        //        .ToList();
+
+        //    long M = offsetList.Aggregate(1L, (acc, val) => acc * val.busId);
+
+        //    long sum = 0;
+        //    foreach (var (busId, offset) in offsetList)
+        //    {
+        //        var mi = (M / busId);
+        //        sum += offset * mi * ModularMultiplicativeInverse(mi, busId);
+        //    }
+
+        //    EarliestCascadeTimestamp = sum % M;
+        //}
 
         private void Run2_BruteForce()
         {
